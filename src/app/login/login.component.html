@@ -1,6 +1,6 @@
 <div class="login-container">
     <!-- add this to the asstest folder  -->
-    <img class="film" src="assets/images/film.png" alt=""/>  
+    <img class="film" src="assets/images/film.png" alt="" />
     <div class="logo">Rotten potatoes</div>
     <div class="desc">
         Rotten Potatoes is the world’s most trusted recommendation resources for
@@ -13,14 +13,28 @@
     <div class="login-form">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="uname" class="form-control" />
+            <!-- ng model directive binds the value of username input field - to use it we import the forms module in the app module (app.modules.ts)-->
+            <input
+            type="text"
+            name="uname"
+            class="form-control"
+            [(ngModel)]="username"
+          />
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="pass" name="pword" class="form-control" />
+            <input
+            type="password"
+            name="pword"
+            class="form-control"
+            [(ngModel)]="password"
+          />
         </div>
         <div class="btn-container">
-            <button class="btn btn-dark">Login</button>
+            <!-- using both way binging that from ng.model -->
+            <div class="error">{{errorMsg}}</div> 
+            <button class="btn btn-dark" (click)="login()" >Login 
+            </button>
         </div>
     </div>
 </div>

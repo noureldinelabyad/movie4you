@@ -1,0 +1,70 @@
+.hom-container {
+  display: flex; // so divs come side by side 
+  height: 100vh;
+  $a: 100%;
+  $b: 80px;
+
+  .all-movies {
+    display: flex;
+    width: 75%;
+    min-height: clac(#{$a} - #{$b});
+    border-right: 1px solid #fdc827;
+    padding: 20px 40px;
+    font-family: "Roboto", sans-serif;
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h4 {
+        text-transform: uppercase;
+        font-weight: bold;
+        border-left: 5px solid #ff9900;
+        padding-left: 10px;
+      }
+
+      .view-all {
+        color: #ff9900;
+        cursor: pointer;
+      }
+    }
+
+    .movies-thumbnail {
+      display: flex;
+      margin-bottom: 30px;
+
+      .movie {
+        margin: 3px;
+        .cover {
+          cursor: pointer;
+          img {
+            border-radius: 5px;
+          }
+        }
+
+        .detail {
+          width: 180px;
+
+          .name {
+            font-weight: bold;
+            height: 50px;
+            margin-top: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .popular-movies {
+    width: 25%;
+    min-height: clac(#{$a} - #{$b});
+    padding: 20px 40px;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .rating{
+    position: relative;
+  }
+}

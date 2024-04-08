@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';  
+import { AuthService } from '../services/auth.service';
 // had to import the Form Modules in the component its self not in the main.server.ts to make  [(ngModel)]="password" work (i dont have app.moduel.ts so put it here)
 
 
@@ -20,7 +21,7 @@ username = "";
 password = "";
 errorMsg = "";
 
-constructor( private router: Router) {}
+constructor(private auth:AuthService, private router: Router) {}
 
 ngOnInit(): void {
   
@@ -36,7 +37,16 @@ ngOnInit(): void {
     }
      else {
       this.errorMsg = ""; // clear the error message box when there are no
+      let res = this.auth.login(this.username, this.password);
+      if (res === 200){
+        this.router.navigate(['home']);
+      }
+
+      if (res === 403){
+        this.errorMsg = "invalid login";
+      }
     }
+
 
   }
 

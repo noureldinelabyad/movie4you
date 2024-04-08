@@ -22,20 +22,20 @@
             top: 150px;
             right: 30px;
             text-align: left;
-            width: 1050px;
             text-shadow:#e2aa02 4px 4px ;
         }
 
         .film{
             position: absolute;
-            top: 50px;
-            left: 50px;
-            width: 500px;
+            top: 5%;
+            left: 5%;
+            width: 40%;
         }
 
         .login-form{
-            width: 500px;
-            height: 280px;
+            width: 40%;
+            min-width: 300px; /* Ensure a minimum width */
+            height: auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
@@ -67,4 +67,25 @@
             }
 
         }
+          // Media Queries
+    @media (max-width: 768px) {
+        .film {
+            width: 80%; // Adjust width for smaller screens
+        }
+
+        .logo{
+            font-size: x-large;
+        }
+
+        .desc{
+            font-size:medium;
+            margin-left: 10%;
+        }
+
+        .login-form {
+            width: 50%; // Adjust width for smaller screens
+            justify-self: center;
+            bottom: 10%; // Adjust position for smaller screens
+        }
+    }
 }

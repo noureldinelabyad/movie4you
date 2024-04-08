@@ -3,6 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { MovieComponent } from './movie/movie.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common'; // Import CommonModule
+
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch:'full'},
@@ -13,7 +19,14 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(routes),
+        HttpClientModule,
+        CommonModule, // Add CommonModule here
+        
+        //AppRoutingModule,
+        //FormsModule,
+        //BrowserModule
+     ],
     exports: [RouterModule]
 })
 export class AppRoutingModule {}

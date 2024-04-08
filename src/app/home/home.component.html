@@ -1,1 +1,27 @@
-<p>home works!</p>
+<app-header></app-header>
+<div class="hom-container">
+    <div class="all-movies">
+        <div class="trending-movies">
+            <div class="top">
+                <h4>trending Movies</h4>
+                <div class="view-all">View All</div>
+            </div>
+            <div class="movies-thumbnail">
+                <div class="movie" *ngFor="let movie of trendingMovies">
+                    <div class="cover">
+                        <!-- using [src] binding to bind the image source dynamically from json file -->
+                        <img [src]="movie.cover" alt="">
+                    </div>
+                    <div class="detail">
+                        <div class="name"> {{movie.name}} </div>
+                        <!-- <ngb-rating [(rate)]="movie.rating" />
+                        <pre class="rating">Rate: <b>{{ movie.rating }}</b></pre>
+                        <div class="rating"> {{ movie.rating}} </div> -->
+                        <app-star-rating class ="rating" [rating]="movie.rating" [isReadOnly]="true"></app-star-rating>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popular-movies"> </div>
+</div>

@@ -28,7 +28,7 @@ export class HomeComponent {
     
 
    // constructor (private http: HttpClient, private router: Router) { }
-    constructor (private http: HttpClient ) { }
+    constructor (private http: HttpClient, private router : Router ) { }
 
     ngOnInit():  void {
         this.getTrendingMovies();
@@ -61,7 +61,7 @@ export class HomeComponent {
       }
     
       goToMovie(type: string, id: string) {
-        //this.router.navigate(['movie', type, id]);
+        this.router.navigate(['movie', type, id]);
       }
     
 
